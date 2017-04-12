@@ -1,0 +1,305 @@
+// --------------------------------
+// Vivid: template.less
+// --------------------------------
+
+// Contains various global layout styles.
+
+
+
+// -----------------------------
+// 2. Media Queries
+// -----------------------------
+
+
+@bp-desktop: ~"only screen and (max-width: 1024px)";
+@bp-tablet: ~"only screen and (max-width: 800px)";
+@bp-mobile: ~"only screen and (max-width: 600px)";
+
+
+
+
+// -----------------------------
+// 3. Typography
+// -----------------------------
+
+
+// H1
+// ------------------------------
+
+h1 {
+    @media @bp-global-small {
+        font-size: bkscale(@font__h1--font-size, 0.7);
+        line-height: bkscale(@font__h1--line-height, 0.7);
+    }
+}
+
+// H2
+// ------------------------------
+
+h2 {
+    @media @bp-global-small {
+        font-size: bkscale(@font__h2--font-size, 0.8);
+        line-height: bkscale(@font__h2--line-height, 0.8);
+    }
+}
+
+// H3
+// ------------------------------
+
+h3 {
+    @media @bp-global-small {
+        font-size: bkscale(@font__h3--font-size, 0.8);
+        line-height: bkscale(@font__h3--line-height, 0.8);
+    }
+}
+
+// H4
+// ------------------------------
+
+h4 {
+    @media @bp-global-small {
+        font-size: bkscale(@font__h4--font-size, 0.8);
+        line-height: bkscale(@font__h4--line-height, 0.8);
+    }
+}
+
+// Paragraph and Strings
+// ------------------------------
+
+p   {
+    @media @bp-global-small {
+        font-size: bkscale(@font__p--font-size, 0.8);
+        line-height: bkscale(@font__p--line-height, 0.8);
+    }
+}
+
+// Anchor links
+a {
+    word-wrap: break-word;
+}
+
+
+
+
+// -----------------------------
+// 3. Global Styles
+// -----------------------------
+
+
+// Body
+// ---------------
+
+body {
+    background: @color__body--background;
+    background-attachment: fixed;
+    -webkit-font-smoothing: antialiased;
+}
+
+
+
+
+// Stops mobile scrolling of the body - only the nav is scrollable
+.noscroll {
+    overflow: hidden;
+    height: 100%;
+    max-height: 100vh;
+}
+
+
+// Container
+// ---------------
+
+.container,
+.bk-pt-home .template-footer {
+    margin: 0 auto;
+    width: 90%;
+}
+
+.blog-post-container {
+    width: 60%;
+    margin: 0 auto;
+
+    @media @tablet {
+        width: 100%;
+    }
+}
+
+
+
+
+// -----------------------------
+// 4. Page Layout
+// -----------------------------
+
+
+// Tpl Hidden
+// -----------------------------
+
+.widget[data-widget-type="feature"].bk-tpl-hidden + .template-header {
+    position: relative;
+}
+
+
+.template-content {
+    padding-top: 60px;
+
+    @media @tablet {
+        padding-top: 40px;
+    }
+}
+
+
+
+
+// -----------------------------
+// 5. Footer
+// -----------------------------
+
+
+.template-footer {
+    background-color: @color__footer--background;
+    margin-top: 30px;
+
+
+    // Content widget margin to stop crashing
+    [data-widget-type="content"] {
+        margin-right: 20px;
+    }
+
+    // Icons
+    .socialicons {
+        .icon:before {
+            display: block;
+        }
+    }
+
+    // Social
+    .social-name {
+        display: none;
+    }
+
+    .social-link {
+        display: inline-block;
+        font-size: 20px;
+        color: @color__socialicons--icon;
+        &:hover {
+            color: darken(@color__socialicons--icon, 10%)
+        }
+    }
+
+    .social-item {
+        margin-right: 10px;
+        margin-bottom: 0px;
+        width: inherit;
+    }
+
+    .profile__twitter {
+        max-width: 400px;
+    }
+
+    p {
+        font-size: 14px;
+        text-transform: uppercase;
+        padding-bottom: 0;
+        font-weight: 700;
+    }
+
+    .companyaddress__address-line {
+        display: inline-block;
+    }
+
+    .form {
+        background-color: transparent;
+        padding: 0;
+        margin-top: 10px;
+    }
+
+    .signupform__input {
+        border-bottom: 1px solid #d6d6d6;
+        background-color: transparent;
+        &:focus {
+            border-bottom: 1px solid @color-swatch4;
+        }
+    }
+
+    .signupform__form-group {
+        display: inline-block;
+        @media @mobile {
+            width: 100%;
+        }
+    }
+
+    .signupform__legend {
+        font-size: 26px;
+        margin-bottom: 0;
+    }
+
+    input[type="email"]:focus {
+        border-bottom: 1px solid @color-swatch4;
+    }
+
+    label {
+        @media @tablet {
+            text-align: left;
+            margin-bottom: 0px;
+        }
+        @media @mobile {
+            text-align: center;
+        }
+    }
+
+    .twitter .tweet-item {
+        width: 100%;
+        padding: 0;
+        margin-bottom: 0;
+    }
+
+    .twitter .avatar {
+        display: none;
+    }
+
+    .twitter .tweet-item:hover {
+        background-color: transparent;
+    }
+
+    .twitter .tweet-wrap {
+        @media @mobile {
+            text-align: center;
+        }
+    }
+
+    .twitter .tweet-wrap {
+        padding: 0;
+        @media @tablet {
+            padding: 0;
+        }
+    }
+
+    .twitter .tweet-item .tweet-wrap p {
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 24px;
+    }
+
+    .signupform__legend {
+        @media @tablet {
+            text-align: left;
+        }
+        @media @mobile {
+            text-align: center;
+        }
+    }
+
+    // Map
+    .map__embed-wrap {
+        width: 400px;
+        @media @mobile {
+            width: 100%;
+        }
+    }
+
+    @media @tablet {
+        display: block;
+        text-align: center;
+    }
+}

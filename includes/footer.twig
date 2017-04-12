@@ -1,0 +1,16 @@
+<!-- Footer Text Widget -->
+<footer class="template-footer">
+
+    <div class="footer-wrapper container">
+
+        {{widget('content', 'footer-content', {
+        content: '<p>&copy; Copyright 2016</p>'
+        })|raw}}
+
+        {{widget('profile', 'socialicons', {
+          'profileType':'socialicons'
+        })|raw}}
+
+    </div>
+    
+</footer>

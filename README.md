@@ -1,2 +1,2 @@
-# volume
-V8 Basekit Template
+# Vivid
+Basekit V8 Template

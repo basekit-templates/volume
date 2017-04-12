@@ -1,0 +1,135 @@
+// -------------------------------
+// Vivid: plugin-menu.less
+// -------------------------------
+
+// -----------------------------
+// #Table of Contents
+// -----------------------------
+
+// 1. #Menu Sections
+// 2. #Menu
+// 3. #Columns
+
+// -----------------------------
+// 1. #Menu Sections
+// -----------------------------
+
+.widget__menusections {
+    text-align: center;
+}
+
+.menusections-item {
+    margin-bottom: 20px;
+
+    border-bottom: 2px solid @contrast-color;
+    padding: 10px 20px;
+
+    &:hover { border-bottom: 2px solid @spare; }
+
+    a:hover {
+        color: lighten(@heading-color,10%);
+        text-decoration: none;
+    }
+
+    @media @bp-mobile {
+        display: block;
+        border-bottom: 0;
+        margin-right: 0;
+        margin-bottom: 0;
+
+        &:hover {
+            border-bottom: 0;
+        }
+    }
+}
+
+.section-header {
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+
+
+
+// -----------------------------
+// 2. #Menu
+// -----------------------------
+
+// #Menu Item
+// ----------
+.menu-item {
+    width: 100%;
+    table-layout: fixed;
+    margin: 20px 0px;
+}
+
+// #Images
+// ----------
+
+.menu .item-image .image-link,
+.menu-item--featured .item-image .image-link {
+    background-color: transparent;
+}
+
+
+// #Description
+// ------------
+.menu__item-description {
+    margin-top: 20px;
+}
+
+
+// #Featured
+// ----------
+
+.menu-item--featured,
+.menu-section--featured {
+    background-color: transparent;
+    padding: 16px;
+    border: 4px solid @spare;
+
+    @media @bp-mobile {
+        padding: 10px;
+    }
+}
+
+.menu-section--featured {
+    margin-top: 10px;
+}
+
+
+// #Footer
+// ----------
+
+.item-subtitle {
+    text-transform: uppercase;
+    color: @heading-color;
+}
+
+
+
+// -----------------------------
+// 3. #Columns
+// -----------------------------
+
+.responsivecolumns {
+
+    .menu-item--featured,
+    .menu-section--featured {
+    padding: 10px;
+    }
+
+    // Reduces column count to 1 so the content isn't completely squashed
+    .menu-items:not(.menu-section--subsection),
+    .menu-list {
+        column-count: 1;
+        -moz-column-count: 1;
+        -webkit-column-count: 1;
+    }
+
+    .menu__item-price {
+        width: 100%;
+        background-color: transparent;
+        color: @paragraph-color;
+    }
+}

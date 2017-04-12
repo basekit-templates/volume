@@ -1,0 +1,182 @@
+// -----------------------------
+// Template colour overrides
+// -----------------------------
+
+
+// Template Colour Variables
+// -----------------------------
+
+@bg-color:              @color__body--background;                 // Background
+
+@bg-color-alt:          darken(@color__body--background,10%);     // Background
+
+@contrast-color:        @color__primary;                          // Contrast Color
+
+@contrast-color-alt:    darken(@color__primary,10%);              // Contrast Color Alt
+
+@button-color:          @color__button--background;               // Button BG Color
+
+@button-color-alt:      lighten(@color__button--background,20%);  // Button BG Color
+
+@heading-color:         @color-swatch4;                         // Heading Text Color (H1 - H4)
+
+@paragraph-color:       @color-swatch5;                          // Paragraph Text Color
+
+@title-color:           @color-swatch7;
+
+@spare:                 @color-swatch7;
+
+
+
+
+// Site
+// ---------
+
+body {
+    background-color: @color__body--background;
+}
+
+.company-link {
+    color: @color__companyname--text;
+}
+
+.template-footer {
+    background-color: @color__footer--background;
+}
+
+
+// Typography
+// ----------
+
+a {
+    color: @color__link--text;
+}
+
+h1 {
+    color: @color__h1--text;
+}
+
+h2 {
+    color: @color__h2--text;
+}
+
+h3 {
+    color: @color__h3--text;
+}
+
+h4 {
+    color: @color__h4--text;
+}
+
+p {
+    color: @color__p--text;
+}
+
+
+
+
+// Button
+// ----------
+
+button,
+.button {
+    color: @color__button--text;
+    &.button:hover {
+    }
+}
+
+
+// Feature
+// ----------
+
+
+.feature {
+    &__headline {
+        font-family: @font__feature-headline--font-family;
+        color: @color__feature-headline--text;
+        font-size: @font__feature-headline--font-size;
+        font-weight: @font__feature-headline--font-weight;
+        line-height: @font__feature-headline--line-height;
+    }
+    &__strapline {
+        font-family: @font__feature-strapline--font-family;
+        color: @color__feature-strapline--text;
+        font-size: @font__feature-strapline--font-size;
+        font-weight: @font__feature-strapline--font-weight;
+        line-height: @font__feature-strapline--line-height;
+    }
+    &__button {
+        color: @color__feature-button--text;
+    }
+}
+
+
+
+// Navigation
+// ---------------
+
+.extendednavigation {
+    .navigation-list.open {
+        background-color: @color__navigation--background;
+    }
+
+    .extendednavigation__item-name {
+        color: @color__navigation--text;
+    }
+
+    .item-name--parent:after {
+        border-top-color: @color__navigation--text;
+    }
+}
+
+
+// Gallery
+// ---------------
+
+.gallery {
+    .image-title {
+        color: @color__gallery-title--text;
+    }
+    .image-description {
+        color: @color__gallery-description--text;
+    }
+    .caption {
+        background-color: @color__gallery-caption--background;
+    }
+}
+
+
+
+
+// Slideshow
+// ---------------
+
+.responsiveslideshow {
+    .caption {
+        background-color: @color__slideshow-caption--background;
+    }
+    .responsiveslideshow__image-title {
+        color: @color__slideshow-title--text;
+    }
+    .responsiveslideshow__image-description {
+        color: @color__slideshow-description--text;
+    }
+}
+
+
+// Ecommerce
+// ---------------
+
+.ecomproduct__product-title,
+.ecomproductslist__title-link {
+    color: @color__ecomproduct-title--text;
+}
+
+.product-item-price,
+.ecomproduct__product-price {
+    color: @color__ecomproduct-price--text;
+}
+
+.ecomproductslist__product-item-title {
+    color: @color__ecomproductslist-product-title--text;
+}

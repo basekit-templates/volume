@@ -1,0 +1,418 @@
+// ------------------------------
+// Vivid:  widget-navigation.less
+// ------------------------------
+
+// Header Extended Navigation
+.header-extendednavigation {
+    // Flex child
+    -webkit-box-ordinal-group: 1;
+    -moz-box-ordinal-group: 1;
+    -webkit-order: 4;
+    -ms-flex-order: 4;
+    order: 4;
+    -webkit-box-flex: 1;
+    -moz-box-flex: 1;
+    -webkit-flex: 1 1 auto;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    -webkit-align-self: auto;
+    -ms-flex-item-align: auto;
+    align-self: auto;
+    @media @tablet {
+        display: block;
+        top: 0px;
+        position: relative;
+        right: 0;
+    }
+    @media @mobile {
+        -webkit-order: 0;
+    -ms-flex-order: 0;
+    order: 0;
+    }
+}
+
+// Folder Item Parent: Gives arrow
+.item-name--parent:after {
+    display: inline-block;
+    vertical-align: middle;
+    content: "";
+    margin-left: 4px;
+    border: 5px solid transparent;
+    border-top-color: transparent;
+}
+
+// Add Styles to Selected Li
+.extendednavigation li.selected {
+    a, .text {
+
+    }
+}
+
+// Navigation Item
+// -----------------
+
+.navigation-item {
+    cursor: pointer;
+    max-width: 1024px;
+    margin: 0px auto;
+    &:hover {
+        background-color: @color__navigation-item--background--hover;
+    }
+}
+
+
+// Item Name
+// -----------------
+
+.item-name {
+    .transition(@duration:0.2s, @ease:ease-in-out);
+}
+
+
+// Folders
+// -----------------
+
+.navigation-list--children {
+    min-width: 150px;
+    padding: 5px;
+}
+
+
+// Folder Item
+.navigation-list--children .item-name {
+    color: @color__navigation--text;
+}
+
+
+// Parent nav items, adds arrow icon
+
+.item-name--parent:after {
+    display: inline-block;
+    vertical-align: middle;
+    content: "";
+    margin-left: 4px;
+    border: 5px solid transparent;
+    border-top-color: @color__navigation--text;
+}
+
+// Navigation Link
+.navigation-item .item-name {
+    &:hover {
+        display: inline-block;
+        color: @color__navigation--text;
+        @media @tablet {
+            border-bottom: 0;
+            display: block;
+        }
+    }
+}
+
+.navigation-item.folder .item-name:hover {
+
+}
+
+// Dropdown Menu
+// -------------
+
+.navigation-item.folder {
+    .item-name:hover {
+        border: none;
+        display: block;
+    }
+    .navigation-list--children .item-name:hover {
+    }
+}
+
+
+
+
+// Selected nav item
+.navigation-item.selected > .item-name {
+    color: @color__navigation--text;
+    @media @tablet {
+        border-bottom: 0;
+    }
+}
+
+.navigation-list--children .navigation-item.selected > .item-name {
+    border-bottom: none;
+}
+
+.extendednavigation li.selected a,
+.extendednavigation li.selected .text {
+    color: @color__navigation--text;
+}
+
+.navigation-item.folder.open-folder .navigation-list--children {
+    background-color: @color__navigation-item--background--hover;
+}
+
+
+// Clears margin on ul, hides navigation on mobile (made visible in conjunction with navigation-toggle)
+.navigation-list {
+    margin: 0;
+    visibility: hidden;
+    &.open {
+        visibility: visible;
+    }
+}
+
+// Extended Navigation
+// -------------------
+.extendednavigation {
+    z-index: 1;
+    height: 100%;
+}
+
+// Navigation List
+// -------------------
+
+.navigation-body {
+    height: 100%;
+}
+
+.navigation-list {
+    position: fixed;
+    -webkit-backface-visibility: hidden;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    height: 100%;
+    width: 100%;
+    .transform(@x:100%, @y:0);
+    transition-duration: 0.4s;
+    padding: 150px 20px;
+    background-color: @color__body--background;
+    // Allows scrolling on mobile
+    &.open {
+        overflow: auto;
+    }
+    @media @mobile {
+        padding: 150px 70px;
+    }
+}
+
+// Hides navigation until toggled
+.navigation-list {
+    margin: 0;
+        &.open {
+            display: block;
+        }
+}
+
+// Navigation Item
+// -------------------
+
+// Navigation item
+.navigation-item {
+    opacity: 0;
+    .transform(@x:0, @y:5px);
+    .transition(@duration:1s, @ease:ease-in-out);
+    display: block;
+    position: relative;
+    cursor: pointer;
+    z-index: 0;
+}
+
+// Navigation item when nav is open
+.navigation-list.open {
+  .transform(@x:0, @y:0);
+  .navigation-item {
+        .transform(@x:0, @y:0);
+        display: block;
+        opacity: 1;
+    }
+}
+
+// Folders
+// -------------
+
+// Parent nav items, adds arrow icon
+.item-name--parent:after {
+    display: inline-block;
+    vertical-align: middle;
+    content: "";
+    margin-left: 4px;
+    border: 5px solid transparent;
+    border-top-color: @color__navigation--text;
+}
+
+.navigation-list .navigation-list--children {
+    padding: 0;
+    position: relative;
+    top: 100%;
+    height: auto;
+    min-width: 100%;
+    background-color: @bg-color;
+    white-space: nowrap;
+    .transform(@x:-5px, @y:0);
+    .transition(@duration:0.4s, @ease:ease-in-out);
+    display: block;
+    position: absolute;
+    height: 0;
+    opacity: 0;
+    overflow: hidden;
+    visibility: hidden;
+    @media @bp-tablet {
+        left: 0;
+    }
+}
+
+// Less Framework Reset
+.navigation-item:hover .navigation-list--children {
+    display: none;
+}
+.navigation-list--children {
+    .navigation-item.folder.open-folder & {
+        display: block;
+        height: auto;
+        padding: 0;
+        position: relative;
+        opacity: 1;
+        .transform(@x:0, @y:0);
+        visibility: visible;
+    }
+}
+
+// Editor Navigation Overlay Settings
+[data-widget-type="extendednavigation"] .widget-overlay .widget__list {
+   @media @mobile {
+        position: absolute;
+    }
+}
+
+
+
+// Navigation Toggle
+// -----------------
+
+.navigation-toggle {
+    .animation;
+
+    // Displays as icon's middle bar
+    background-color: @color__companyname--text;
+    background-clip: content-box;
+    width: 60px;
+    height: 46px;
+    padding: 22px 0px 22px 20px!important;
+    position: relative;
+    text-indent: 9999px;
+    overflow: hidden;
+    float: right;
+    background-image: none;
+
+    .transition(@duration:0.2s, @ease:ease-in-out);
+
+
+    @media @bp-tablet {
+        display: block;
+    }
+
+    @media @mobile {
+        float: right;
+    }
+
+
+    // Top and bottom navigation item bar
+
+    &:after, &:before {
+        content: "";
+        height: 2px;
+        width: 40px;
+        position: absolute;
+        left: 20px;
+        display: block;
+        background: @color__companyname--text;
+        margin-right: 0;
+        margin-left: 0;
+        -webkit-transition: all 0.25s ease-in-out;
+        -moz-transition: all 0.25s ease-in-out;
+        -o-transition: all 0.25s ease-in-out;
+        transition: all 0.25s ease-in-out;
+    }
+
+
+    // Top bar
+
+    &:before {
+        top: 12px;
+
+    }
+
+
+    // Bottom bar
+
+    &:after {
+        bottom: 12px;
+        top: inherit;
+    }
+
+
+
+
+    &:hover {
+        background-color: @color__companyname--text;
+
+        &:after, &:before {
+            background: @color__companyname--text;
+        }
+    }
+
+
+    // Toggle Button open state
+    // ------------------------------
+
+    .open & {
+        background-color: transparent;
+        z-index: 100000;
+        background-image: none;
+
+        &:before {
+            top: 23px; background: white; -webkit-transform: rotate(45deg); -moz-transform: rotate(45deg); -o-transform: rotate(45deg); -ms-transform: rotate(45deg); transform: rotate(45deg);
+
+        }
+
+        &:after {
+            bottom: 21px; background: white; -webkit-transform: rotate(-45deg); -moz-transform: rotate(-45deg); -o-transform: rotate(-45deg); -ms-transform: rotate(-45deg); transform: rotate(-45deg);
+        }
+    }
+}
+
+.bk-pt-home {
+    .header-extendednavigation {
+        @media @tablet {
+            right: 0px;
+        }
+    }
+    .navigation-toggle {
+        padding: 22px 10px!important;
+        &:after,
+        &:before {
+            left: 10px;
+        }
+    }
+}
+
+@keyframes bar1 {
+    0% { top: 13px;}
+    50% { top: 23px;  -webkit-transform: rotate(0deg); -moz-transform: rotate(0deg); -o-transform: rotate(0deg); -ms-transform: rotate(0deg); transform: rotate(0deg);  }
+    100% {top: 23px; background: @color-swatch1; -webkit-transform: rotate(45deg); -moz-transform: rotate(45deg); -o-transform: rotate(45deg); -ms-transform: rotate(45deg); transform: rotate(45deg);   }
+}
+
+@-webkit-keyframes bar1 {
+    0% { top: 13px;}
+    50% { top: 23px; -webkit-transform: rotate(0deg); -moz-transform: rotate(0deg); -o-transform: rotate(0deg); -ms-transform: rotate(0deg); transform: rotate(0deg);   }
+    100% {  }
+}
+
+@keyframes bar2 {
+    0% { bottom: 13px;}
+    50% { bottom: 21px;  -webkit-transform: rotate(0deg); -moz-transform: rotate(0deg); -o-transform: rotate(0deg); -ms-transform: rotate(0deg); transform: rotate(0deg);  }
+    100% {}
+}
+
+@-webkit-keyframes bar2 {
+    0% { bottom: 13px;}
+    50% { bottom: 21px;  -webkit-transform: rotate(0deg); -moz-transform: rotate(0deg); -o-transform: rotate(0deg); -ms-transform: rotate(0deg); transform: rotate(0deg);   }
+    100% {}
+}

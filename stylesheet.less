@@ -1,0 +1,45 @@
+// ---------------------
+// Vivid:  Main Styles
+// ---------------------
+
+// -----------------------------
+// 1. LESS Includes
+// -----------------------------
+
+
+@import "@{templateCommon}/bk-less-framework-v8.less";             // BK LESS Framework
+
+@import "@{templateLocal}/less/v8-variables.less";              // V8 Variable conversion
+// @import "@{templateLocal}/bk-v8-test.less";                   // BK v8 test
+
+@import "@{templateLocal}/less/template.less";                  // Template positioning styles
+@import "@{templateLocal}/less/variables-mixins.less";          // Variables
+
+@import "@{templateLocal}/less/widgets/widgets-all.less";       // Widgets > All
+@import "@{templateLocal}/less/widgets/widget-gallery.less";    // Widgets > Gallery
+@import "@{templateLocal}/less/widgets/widget-navigation.less"; // Widgets > Navigation
+
+@import "@{templateLocal}/less/plugins/plugin-blog.less";       // Plugin > Blog
+@import "@{templateLocal}/less/plugins/plugin-menu.less";       // Plugin > Menu
+@import "@{templateLocal}/less/plugins/plugin-ecommerce.less";  // Plugin > Ecommerce
+
+
+// ------------------------------
+// #Global Breakpoints
+// ------------------------------
+
+// Page is contained and centered
+@bp-global-above-fullwidth: ~"only screen and (min-width: 1800px)";
+
+// Page displayed full width
+@bp-global-below-fullwidth: ~"only screen and (max-width: 1800px)";
+
+@bp-global-large:   ~"only screen and (min-width: 1400px)";
+@bp-global-medium:  ~"only screen and (min-width: 770px) and (max-width: 1400px)";
+@bp-global-small:   ~"only screen and (max-width: 800px)";
+@mobile: ~"only screen and (max-width: 650px)";
+
+@bp-1050: ~"only screen and (max-width: 1050px)";
+
+// When specific styles for responsive columns styles are applied
+@bp-global-columns: ~"only screen and (min-width: 478px)";

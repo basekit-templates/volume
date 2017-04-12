@@ -1,0 +1,90 @@
+{% extends "layout.twig" %}
+
+{% block content %}
+
+<div class="bk-pt-home">
+
+    {% include "includes/header.twig" %}
+
+    <div class="homepage-content"><!-- adds sticky footer -->
+
+        <div class="main-content"><!-- adds sticky footer-->
+
+            <div class="feature-wrap">
+
+                {{widget('feature', 'featurehome', {
+                    "header": "profile",
+                    "strapline": "profile",
+                    "defaultBgImg": asset('images/feature.jpg'),
+                    'positionTopPercentage': '0',
+                    'showBtn': true,
+                    buttonText: "Lorem Ipsum"
+                })|raw}}
+
+                <!-- Feature Arrow -->
+                <a href="#main-scroll" class="feature-arrow-link  arrow-bounce"></a>
+
+            </div>
+
+            <!-- Homepage Gallery -->
+            <section class="homepage-gallery">
+                {{widget('gallery', 'gallery1',
+                {'albumRef':0,
+                'showDescription': true,
+                'showTitle': true,
+                'images':
+                [
+                {'imageHeight':'500', 'imageWidth':'500', 'url':asset('images/gallery/1.jpg'), 'title':'Excepteur           sint',  'description': 'Lorem ipsum dolor sit amet'},
+                {'imageHeight':'500', 'imageWidth':'500', 'url':asset('images/gallery/2.jpg'), 'title':'Duis            aute',  'description': 'Dolore magna aliqua'},
+                ]
+                })|raw}}
+            </section>
+            <!-- End Homepage Gallery -->
+
+            <!-- Container -->
+            <div class="container">
+
+                <!-- Page Content -->
+                <section id="main-scroll" class="template-content">
+
+                <!-- Main Widget Zone -->
+                {{zone('main')|raw}}
+
+                </section>
+                <!-- End Page Content -->
+
+            </div><!-- End Container -->
+
+        </div><!-- End main-content -->
+
+    </div><!-- End homepage-content -->
+
+</div>
+
+{% include "includes/footer.twig" %}
+
+{% endblock %}
+
+
+{% block scripts %}
+
+   <!-- Smooth Scroll -->
+<script nonce="{{ numberUsedOnce }}">
+    $(document).ready(function(){
+
+        $('a[href*=#]').bind('click', function(e) {
+            e.preventDefault();
+
+            var target = $(this).attr("href");
+
+            $('html, body').stop().animate({ scrollTop: $(target).offset().top}, 1000, function() {
+                location.hash = target;
+            });
+
+            return false;
+        });
+
+    });
+</script>
+
+{% endblock %}

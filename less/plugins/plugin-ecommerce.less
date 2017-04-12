@@ -1,0 +1,765 @@
+// ------------------------------------
+// Vivid: plugin-ecommerce.less
+// ------------------------------------
+
+// -----------------------------
+// #Table of Contents
+// -----------------------------
+
+// 1. #PRODUCT LIST
+//      #1.1 #PRODUCT FILTERS
+
+// 2. #SINGLE PRODUCT
+// 3. #PRODUCT IMAGES
+// 4. #BASKET WIDGET
+// 5. #BASKET SUMMARY
+
+
+
+
+// -----------------------------
+// 1. #Product List
+// -----------------------------
+
+// Product List
+.product-list {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+
+    justify-content: space-between;
+    -webkit-justify-content: space-between;
+}
+
+
+// This sets up the widths for each item
+.product-item {
+    position: relative;
+    width: 33.3%;
+
+    // Display 100% at mobile
+    @media only screen
+    and (max-width : 667px) {
+        width: 100%;
+    }
+}
+
+// Product list product article hover
+.ecomproductslist__product-item-article,
+.ecomfeaturedproducts__product-item-article {
+    padding-top: 60px;
+    &:hover {
+        background-color: #ffffff;
+        .transition;
+    }
+    @media @mobile {
+        padding-top: 20px;
+    }
+}
+
+// Product List Flexbox
+.product-item-details {
+    padding: 20px;
+    display: block;
+
+    @media @mobile {
+        height: 100%;
+
+    }
+}
+
+.product-item-title {
+    .flex-order(@order: 0);
+    .flex(@display: 0 1 auto);
+    .align-self(@align: center);
+}
+
+.product-item-price {
+    .flex-order(@order: 1);
+    .flex(@display: 0 1 auto);
+    .align-self(@align: center);
+
+    font-size: 20px;
+}
+
+.title-link {
+    color: @heading-color;
+}
+
+.product-item-title {
+    a:hover {
+        text-decoration: none;
+    }
+}
+
+// Title
+.product-item-title,
+.product-item-price {
+    text-align: center;
+
+    @media only screen
+    and (max-width : 667px) {
+        font-size: @font__p--font-size;
+        line-height: bkscale(@font__p--line-height,0.8);
+    }
+}
+
+
+
+
+// -------------------------------
+// 5. #Basket Filters
+// -------------------------------
+
+
+.ecomproductslist {
+    .legend {
+        display: none;
+    }
+    .listing-title {
+        @media @mobile {
+            text-align: center;
+        }
+    }
+    .listing-header {
+        margin-bottom: 20px;
+    }
+    .product-content {
+        background-color: #fff;
+        position: relative;
+        width: 90%;
+        margin: -20px auto 20px;
+        padding: 20px;
+        .boxshadow;
+    }
+    .listing-footer {
+        margin-top: 20px;
+    }
+    .select {
+        border-bottom: 1px solid #ddd;
+    }
+    .form {
+        background-color: transparent;
+        border: 0;
+        padding: 0;
+    }
+    .label {
+        position: relative;
+        top: 0;
+        padding-left: 0;
+        color: @color__p--text;
+        text-transform: uppercase;
+    }
+    .fieldset--search {
+        float: right;
+        width: 35%;
+        @media @tablet {
+            float: initial;
+            width: 100%;
+        }
+        @media @mobile {
+            text-align: center;
+        }
+    }
+    .fieldset--filters {
+        float: left;
+        width: 65%;
+        @media @tablet {
+            width: 100%;
+        }
+    }
+    .listing-section {
+        @media @mobile {
+            text-align: center;
+        }
+    }
+    .listing-order {
+        clear: both;
+        padding: 0;
+        color: @color__p--text;
+        padding-top: 20px;
+        font-size: 14px;
+    }
+    .input {
+        box-shadow: none;
+        padding: 5px 0px 4px;
+        height: 36px;
+        border: 0!important;
+        border-bottom: 1px solid darken(@color-swatch1,10%)!important;
+        background-color: transparent;
+    }
+    .form-group {
+        @media @tablet {
+            width: 100%;
+        }
+    }
+    .form-body {
+        margin: 10px 0 0;
+        @media @tablet {
+            float: initial;
+        }
+    }
+}
+
+.product-filters .form-group {
+    margin-bottom: 0;
+    @media @tablet {
+        margin-bottom: 10px;
+    }
+}
+
+.ecomproductslist__fieldset--search .ecomproductslist__legend {
+    @media @tablet {
+         border-top: 0;
+    }
+}
+
+.ecomproductslist__fieldset--search .ecomproductslist__form-group:nth-child(1) {
+    width: 60%;
+    margin-right: 0;
+    @media @tablet {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}
+
+.ecomproductslist__fieldset--search .ecomproductslist__form-group:nth-child(2) {
+    @media @tablet {
+        width: 100%;
+        padding: 0;
+    }
+}
+
+.listing-pagination .pagination-item.current a {
+    background-color: @color__button--background;
+}
+
+.product-listing__form-group {
+    @media @mobile {
+        display:block;
+    }
+}
+
+.cell--header.basket-summary__cell,
+.basket-summary__cell {
+    @media @mobile {
+            text-align: center;
+        }
+}
+
+// General Select Elements
+select {
+    font-size: 16px;
+    min-width: 80px;
+    @media @tablet {
+        width: 100%;
+    }
+}
+
+// Ecom Category List
+.ecomcategorieslist {
+    .category-list-body {
+        text-align: center;
+        padding: 1px 20px 1px;
+        background-color: #f5f5f5;
+        margin-bottom: 10px;
+        h3 {
+            padding-bottom: 0;
+        }
+    }
+    .category-item {
+        display: inline-block;
+        margin-right: 10px;
+    }
+}
+
+
+
+
+// -----------------------------
+// 2. #Single Product
+// -----------------------------
+
+// Display images and content inline
+.product-images,
+.product-content {
+    display: inline-block;
+    vertical-align: top;
+}
+
+
+// Product Images
+// --------------
+
+.product-images {
+    width: 56%;
+    margin-right: 3%;
+    @media @bp-tablet {
+        width: 100%;
+        margin-right: 0;
+    }
+}
+
+
+// Product Content
+// ---------------
+
+.product-content {
+    width: 40%;
+    background-color: white;
+    padding: 40px;
+    @media @bp-tablet {
+        width: 100%;
+    }
+    @media @mobile {
+        padding: 20px;
+    }
+}
+
+// Product Details
+.product-price { font-size: @font__p--font-size; }
+
+.ecomproduct {
+    .legend {
+        display: none;
+    }
+    .label,
+    .tags-title {
+        color: @color__h4--text;
+    }
+    .product-body {
+        font-size: 22px;
+        line-height: 36px;
+    }
+    .form {
+        margin-top: 20px;
+        background-color: transparent;
+        padding: 0;
+    }
+    .product-image {
+        @media @bp-tablet {
+            margin-bottom: 20px;
+        }
+    }
+    .fieldset {
+        margin-bottom: 20px;
+    }
+    .form-group {
+        float: left;
+        margin-right: 30px;
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    .form-body { 
+        margin: 0;
+        @media @bp-mobile { 
+            margin-bottom: 20px;
+        }
+    }
+    .product-attribute-title {
+        color: @color__h4--text;
+        font-size: 16px;
+    }
+    .category-link {
+        font-size: 16px;
+    }
+    .select {
+        min-width: 100%;
+    }
+    .tags-title,
+    .tag-link {
+        font-size: 16px;
+    }
+}
+
+// Add to Basket,
+// View Basket Buttons
+.button--submit.ecomproduct__input,
+.ecomproduct__button {
+    min-width: 150px;
+    text-align: center;
+    font-size: 17px;
+}
+
+button.icon--add.added {
+    background: transparent!important;
+}
+
+
+// product Tags
+.tag-item {
+    margin-right: -4px;
+}
+.tag-item:first-child:before {
+    display: none;
+}
+.tag-item:before {
+    content: ',';
+}
+
+
+// Once product is added
+.form .button {
+    &.added {
+        &:before {
+            content: '\f00c'
+        }
+    }
+}
+
+
+
+
+// -----------------------------
+// 3. #Product Images
+// -----------------------------
+
+// Adds margin to product image div
+.product-item-image,
+.basket-item-image {
+    margin-bottom: 20px;
+    @media @mobile {
+        margin-bottom: 10px;
+    }
+}
+
+.product-item-image, 
+.product-item-image .image-link {
+    height: 200px;
+    line-height: 200px;
+    background-color: transparent;
+}
+
+.product-image .image-link {
+     height: 100%;
+    line-height: 100%;
+}
+
+
+
+
+// -----------------------------
+// 4. #Basket Widget
+// -----------------------------
+
+// Basket Body
+.basket-body {
+    min-width: 40%;
+    width: 100%;
+	padding: 30px;
+
+    @media @bp-tablet {
+        width: 100%;
+    }
+    @media @bp-mobile {
+        padding: 20px;
+    }
+}
+
+// Basket Item
+.basket-item {
+	position: relative;
+	padding: 30px;
+	background-color: @bg-color;
+    border-top: 4px solid @contrast-color;
+
+    &:last-child {
+        border-bottom: 4px solid @contrast-color;
+    }
+}
+
+// Remove BG colour on summary form
+.form.basket-summary__summary-form { background-color: transparent; }
+
+
+// Basket Layout
+// -------------
+
+.basket-item-image,
+.basket-item-details {
+    display: inline-block;
+}
+
+
+// Basket Image
+// ------------
+
+.basket-item-image {
+    margin-bottom: 0;
+    margin-right: 20px;
+}
+
+
+// Remove Item Button
+// ------------------
+
+// Position in top-right
+.item-remove {
+	position: absolute;
+    top: 30px;
+    right: 30px;
+    height: 25px;
+    width: 25px;
+    padding: 0;
+    font-size: 14px;
+    line-height: 0;
+}
+
+// Remove icon spacing
+.item-remove:before {
+    margin-right: 0;
+}
+
+// Hide button text
+.remove-text {
+    display: none;
+}
+
+
+// Basket Footer
+// -------------
+
+.basket-footer {
+    margin-top: 0;
+    padding: 30px;
+    background-color: darken(@color-swatch1,10%);
+}
+
+.basket-total {
+    padding-bottom: 20px;
+    color: @heading-color;
+    text-transform: uppercase;
+}
+
+
+
+
+// -----------------------------
+// 5. #Basket Summary
+// -----------------------------
+
+
+// Summary Title
+// ------------------------------
+
+.ecombasketsummary { 
+    background-color: white;
+    padding: 40px;
+    margin-bottom: 40px;
+    @media @tablet {
+        margin-bottom: 30px;
+    }
+    @media @mobile {
+        margin-bottom: 20px;
+        padding: 20px;
+    }
+    .summary-form {
+        display: inline-block;
+        padding: 0;
+    }
+    .summary-table .cell {
+        background-color: white;
+    }
+    .button {
+        @media @mobile {
+            font-size: 16px;
+        }
+    }
+}
+
+
+// Cell Image
+// ------------------------------
+.cell--image img {
+    max-width: 130px;
+}
+
+
+// Qty buttons
+// ------------------------------
+
+.quantity-wrap .button--quantity {
+    height: 35px;
+    width: 35px;
+    background-image: none;
+    &:hover {
+        padding: 0;
+    }
+}
+
+
+// Summary Table
+// ------------------------------
+
+.summary-table {
+    width: 100%;
+    // Table Row
+    .table-row {
+        @media @bp-mobile  {
+            display: -webkit-box;
+            display: -moz-box;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-box-direction: normal;
+            -moz-box-direction: normal;
+            -webkit-box-orient: vertical;
+            -moz-box-orient: vertical;
+            -webkit-flex-direction: column;
+            -ms-flex-direction: column;
+            flex-direction: column;
+
+            border-bottom: 1px solid darken(@color-swatch1,10%);
+        }
+    }
+
+    // Table Row Heading
+    .table-row--heading {
+        @media @bp-mobile {
+            display: none;
+        }
+    }
+
+    // Column: Image
+    .cell--image {
+        vertical-align: top;
+        width: 15%;
+    }
+
+    // Column: Price & Total
+    .cell--price,
+    .cell--total {
+        width: 10%;
+        @media @bp-mobile {
+            border-top: 1px solid darken(@color-swatch1,10%)!important;
+        }
+    }
+
+    // Table Cell: General
+    .cell {
+        vertical-align: middle;
+        padding: 8px 12px;
+        border-radius: 0;
+        @media @bp-mobile {
+            width: 100%;
+            border: 0;
+            display: block;
+        }
+        &:not(.cell--title):before {
+            @media @bp-mobile {
+                content: attr(data-title);
+                display: block;
+                font-size: 12px;
+                line-height: 1.2;
+            }
+        }
+    }
+
+    // Column: Title
+    .cell--title {
+        width: 50%;
+        @media @bp-mobile {
+            width: 100%;
+            padding-top: 0;
+            padding-bottom: 0;
+        }
+    }
+
+    // Column: Quantity
+    .cell--quantity {
+        width: 15%;
+        @media @bp-mobile {
+            width: 40%;
+            padding-bottom: 20px;
+        }
+    }
+
+    .no-image,
+    .summary-item-link {
+        background-image: none !important;
+    }
+
+}
+
+
+
+
+// ---------------------------------
+// #Columns Variations
+// ---------------------------------
+
+
+
+
+// All Columns
+// ------------------------------
+
+
+@media @bp-global-columns {
+    .responsivecolumns {
+
+        .ecomproductslist__fieldset--search .ecomproductslist__form-group:nth-child(1),
+        .ecomproductslist .form-body,
+        .ecomproductslist .fieldset--search {
+            width: 100%;
+        }
+    
+        // Price
+        .product-item-price {
+            max-width: inherit;
+            height: auto;
+            padding: 3px 5px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            font-size: bkscale(@font__p--font-size,0.8);
+        }
+    
+        .product-item-title {
+            font-size: @font__p--font-size;
+            line-height: bkscale(@font__p--line-height,0.8);
+        }
+
+        .product-content,
+        .product-images, {
+            width: 100%;
+            margin: 0;
+        }
+
+        .product-item {
+            width: 50%;
+        }
+
+        // 3/4 columns
+        .columns-four-first,
+        .columns-four-second,
+        .columns-four-third,
+        .columns-four-fourth,
+        .columns-three-left,
+        .columns-three-right,
+        .columns-three-middle {
+
+            .product-item {
+                width: 100%;
+            }
+
+        }
+
+
+        // 4 columns
+        // ------------------------------
+
+
+        .columns-four-first,
+        .columns-four-second,
+        .columns-four-third,
+        .columns-four-fourth {
+
+        }
+    }
+}

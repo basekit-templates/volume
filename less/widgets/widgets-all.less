@@ -1,0 +1,1462 @@
+// ------------------------------
+// Vivid:  Widget-all.less
+// ------------------------------
+
+// -----------------------------
+// #Table of Contents
+// -----------------------------
+
+//  1.   #Template Header + Footer
+//  2.   #Logo & Company Name
+
+//  4.   #Feature
+//  5.   #Images
+//  6.   #Gallery
+//  7.   #Slideshow
+
+//  8.   #Buttons
+
+//  9.   #Forms
+
+// 10.   #Social Icons
+// 11.   #Twitter Feed
+
+// 12.   #Divider
+// 13.   #Yelp
+// 14.   #Messages
+// 15.   #Click to call
+// 16.   #Map
+
+
+
+// -----------------------------
+// 1. #Template Header
+// -----------------------------
+
+.template-header {
+    .flex-vert-center; // Mixin > Flexbox: Vertical Align Center Mixin
+    min-height: 80px;
+    background-color: @color__feature-content--background;
+    z-index: 9999;
+    width: 100%;
+    padding: 20px 0;
+    width: 100%;
+    margin: 0px auto;
+    @media @mobile {
+        padding: 0;
+    }
+}
+
+.bk-pt-default .template-header {
+    position: relative;
+}
+
+
+// Header Wrapper
+// --------------
+
+.header-wrapper,
+.footer-wrapper {
+    // Flex parent
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-direction: normal;
+    -moz-box-direction: normal;
+    -webkit-box-orient: horizontal;
+    -moz-box-orient: horizontal;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-pack: start;
+    -moz-box-pack: start;
+    -webkit-justify-content: flex-start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    -webkit-align-content: flex-start;
+    -ms-flex-line-pack: start;
+    align-content: flex-start;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    // Layout
+    padding: 10px 0;
+}
+
+.header-wrapper {
+    width: 90%;
+    margin: 0px auto;
+    border-bottom: 1px solid rgba(230, 230, 230, 0.28);
+    padding: 20px 0 30px;
+}
+
+.footer-wrapper {
+    width: 90%;
+    .justify-content(space-between);
+
+    @media @mobile {
+        display: block;
+    }
+}
+
+
+
+
+// -----------------------------
+// 2. #Logo & Company Name
+// -----------------------------
+
+.widget__logo {
+    margin-right: 10px;
+    @media @tablet {
+        margin-right: 0;
+    }
+}
+
+// Header Logo Flexbox
+.header-logo {
+    // Flex child
+    -webkit-box-ordinal-group: 1;
+    -moz-box-ordinal-group: 1;
+    -webkit-order: 1;
+    -ms-flex-order: 1;
+    order: 1;
+    -webkit-box-flex: 0;
+    -moz-box-flex: 0;
+    -webkit-flex: 0 0 auto;
+    -ms-flex: 0 0 auto;
+    flex: 0 0 auto;
+    -webkit-align-self: auto;
+    -ms-flex-item-align: auto;
+    align-self: auto;
+
+    // Layout
+    text-align: center;
+    max-width: 100%;
+
+    @media @tablet {
+        padding: 10px 0px;
+        display: inline-block;
+        vertical-align: middle;
+        margin-bottom: 20px;
+    }
+
+    @media @mobile {
+        width: 100%;
+        text-align: center;
+        padding: 10px 0px 0;
+    }
+
+    img, .logo {
+        line-height: 0;
+    }
+}
+
+
+// #Company Name
+// -----------------------------
+
+.company-name {
+    @media @tablet {
+        text-align:center;
+    }
+}
+
+.companyname__company-link {
+    &:hover {
+        text-decoration: none;
+    }
+}
+
+.company-link {
+    vertical-align: top;
+    @media @tablet {
+        font-size: bkscale(@font__companyname--font-size,0.8);
+        line-height: bkscale(@font__companyname--line-height,0.8);
+    }
+    @media @mobile {
+        font-size: bkscale(@font__companyname--font-size,0.7);
+        line-height: bkscale(@font__companyname--line-height,0.7);
+    }
+}
+
+.companyname__company-link a:hover {
+    text-decoration: none;
+}
+
+// Header  Companyname Flexbox
+.header-companyname {
+    // Flex child
+    -webkit-box-ordinal-group: 1;
+    -moz-box-ordinal-group: 1;
+    -webkit-order: 2;
+    -ms-flex-order: 2;
+    order: 2;
+    -webkit-box-flex: 10;
+    -moz-box-flex: 10;
+    -webkit-flex: 10 10 auto;
+    -ms-flex: 10 10 auto;
+    flex: 10 10 auto;
+    -webkit-align-self: auto;
+    -ms-flex-item-align: auto;
+    align-self: auto;
+
+    @media @tablet {
+        display: inline-block;
+    }
+
+    @media @mobile {
+        text-align: center;
+    }
+}
+
+
+
+
+// -----------------------------
+// 3.  #Feature
+// -----------------------------
+
+
+// Feature Wrap
+// ---------------
+
+.feature-wrap {
+    position: relative;
+}
+
+.feature:after {
+    content: "";
+    display: block;
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: @color__feature-content--background;
+}
+
+
+// Feature Background (Image)
+// --------------------------
+
+.feature__background-image {
+    background-repeat: no-repeat;
+    background-position: center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    min-height: 500px;
+    display: table;
+    height: 500px;
+    width: 100%;
+    @media @tablet {
+        min-height: 400px;
+        height: 400px;
+    }
+    @media @mobile {
+        min-height: 200px;
+        height: 300px;
+    }
+}
+
+
+// Feature Content Wrap
+// --------------------
+
+.feature__content-wrap {
+    text-align:center;
+    max-width: 80%;
+    padding: 100px 0 20px;
+    vertical-align: bottom;
+    display: table-cell;
+    z-index: 999;
+    position: relative;
+    @media @tablet {
+        max-width: 100%;
+    }
+}
+
+.feature__content-inner-wrap {
+    margin: 0 auto;
+    width: 90%;
+    @media @tablet {
+        margin: 0;
+        width: 80%;
+        padding: 0 0 0 5%;
+    }
+    @media @tablet {
+        width: 100%;
+        padding: 0 5%;
+    }
+}
+
+
+// Feature Content
+// ---------------
+
+.feature__headline {
+    max-width: 70%;
+    text-align: left;
+    @media @tablet {
+        font-size: bkscale(@font__feature-headline--font-size,0.6);
+        line-height: bkscale(@font__feature-headline--line-height,0.7);
+        max-width: 100%;
+    }
+    @media @mobile {
+        font-size: bkscale(@font__feature-headline--font-size,0.5);
+        line-height: bkscale(@font__feature-headline--line-height,0.6);
+    }
+}
+
+.feature__strapline {
+    max-width: 50%;
+    text-align: left;
+    @media @tablet {
+        font-size: bkscale(@font__feature-strapline--font-size,0.9);
+        line-height: bkscale(@font__feature-strapline--line-height,0.9);
+        max-width: 100%;
+    }
+    @media @mobile {
+        font-size: bkscale(@font__feature-strapline--font-size,0.8);
+        line-height: bkscale(@font__feature-strapline--line-height,0.8);
+    }
+}
+
+
+// Feature Button
+// ---------------
+
+.feature__button {
+    margin: 5px 0 10px 0;
+    color: @color__feature-button--text;
+    float: left;
+    z-index: 9999;
+    position: relative;
+    max-width: 100%;
+    text-align: left;
+}
+
+
+// Default Page Feature
+// --------------------------
+
+.default-feature .feature__background-image {
+    min-height: 150px;
+    height: 150px;
+}
+
+
+// Feature Arrow
+// ------------------------------
+
+
+.feature-arrow-link {
+    height: 50px;
+    background-image: image('/images/down-arrow.png');
+    background-repeat: no-repeat;
+    position: absolute;
+    z-index: 999;
+    width: 50px;
+    bottom: 30px;
+    right: 5%;
+    background-position: right;
+    background-size: 50px;
+    @media @mobile {
+        display: none;
+    }
+}
+
+// Bounce Keyframes
+@-webkit-keyframes bounce {
+    from {
+        top: 0;
+    }
+    to {
+        top: 8px;
+    }
+}
+@-moz-keyframes bounce {
+    from {
+        top: 0;
+    }
+    to {
+        top: 8px;
+    }
+}
+
+
+
+
+// -----------------------------
+// 4. #Images
+// -----------------------------
+
+// Image Widget
+// ------------
+
+// Title
+.image-title {
+    font-size: bkscale(@font__p--font-size, 0.8);
+    line-height: bkscale(@font__p--line-height, 0.8);
+    font-family: @font__p--font-family;
+    font-weight: 700;
+    text-transform: uppercase;
+    @media @tablet {
+        font-size: bkscale(@font__p--font-size, 0.7);
+        line-height: bkscale(@font__p--line-height, 0.7);
+    }
+    @media @mobile {
+        font-size: bkscale(@font__p--font-size, 0.6);
+        line-height: bkscale(@font__p--line-height, 0.6);
+    }
+}
+
+.image-description {
+    font-size: @font__h4--font-size;
+    line-height: @font__h4--line-height;
+    font-family: @font__h4--font-family;
+    @media @tablet {
+        font-size: bkscale(@font__p--font-size, 0.9);
+        line-height: bkscale(@font__p--line-height, 0.9);
+    }
+    @media @mobile {
+        font-size: bkscale(@font__p--font-size, 0.7);
+        line-height: bkscale(@font__p--line-height, 0.7);
+    }
+}
+
+.imagewidget {
+    .image-title,
+    .image-description {
+        color: @color__p--text;
+        text-shadow: none;
+    }
+}
+
+
+
+
+// -----------------------------
+// 5.  #Gallery
+// -----------------------------
+
+
+.gallery {
+
+    // Gallery Item
+    // ------------
+
+    .gallery-item {
+        height: 300px;
+        overflow: hidden;
+    }
+
+
+
+    // Gallery Caption
+    // ---------------
+
+    .caption {
+        display: block !important;
+        height: 100%;
+        opacity: 0; // Hides caption by default
+
+        .transition(@duration:0.3s, @ease:ease-in-out); // Mixins
+    }
+
+
+
+
+    // Hover State
+    // ---------------
+
+    .figure:hover .caption {
+        visibility: visible;
+        opacity: 1;
+        background-color: @color__gallery-caption--background;
+    }
+
+
+
+
+    // Caption Link
+    // ---------------
+
+    .gallery__caption-link {
+        position: absolute;
+        bottom: 0;
+        padding: 20px;
+        left: 0;
+        top: 0;
+        right: 0;
+    }
+
+    a.gallery__caption-link:hover {
+        text-decoration: none;
+    }
+
+     // Flexbox
+    // ---------------
+
+    .caption-link {
+        .flex(@display: flex);
+        .flex-direction(@direction: column);
+        .flex-wrap(@wrap: wrap);
+        .justify-content(@justify: flex-end);
+        .align-content(@align: left);
+        .align-items(@align: flex-start);
+
+        @media @tablet {
+            display: none;
+        }
+    }
+    
+    .image-title {
+        .flex-order(@order: 0);
+        .flex(@display: 0 0 auto);
+        .align-self(@align: flex-start);
+    }
+    
+    .image-description {
+        .flex-order(@order: 1);
+        .flex(@display: 0 0 auto);
+        .align-self(@align: auto);
+    }
+
+
+    // Smaller screens
+    // ---------------
+
+    @media @bp-tablet {
+        .gallery-item {
+            height: 210px;
+        }
+    }
+}
+
+
+
+
+// -----------------------------
+// 6.  #Slideshow
+// -----------------------------
+
+
+// Slideshow Mobile
+// ----------------
+
+.responsiveslideshow {
+    .icon--previous:before {
+        content: "\f104";
+        font-size: 40px;
+        color: black;
+        &:hover {
+            margin-right: 15px;
+        }
+    }
+    .icon--next:after {
+        content: "\f105";
+        font-size: 40px;
+        color: black;
+        &:hover {
+            margin-left: 15px;
+        }
+    }
+    @media @mobile {
+        height: 300px!important;
+        min-height: 300px!important;
+    }
+    .slides-list {
+        @media @mobile {
+            min-height: 300px!important;
+            height: 300px!important;
+        }
+    }
+    .slide-item {
+        @media @mobile {
+            height: 300px!important;
+        }
+    }
+    .icon--play:before, 
+    .icon--pause.pause:before {
+        font-size: 30px;
+    }
+}
+
+
+// Slideshow items
+// ---------------
+
+// Slideshow set minimum height
+.responsiveslideshow .slides-list,
+.responsiveslideshow .figure {
+    position: relative;
+    min-height: 400px;
+    background-color: #efefef!important;
+    @media @mobile {
+        background-color: transparent!important;
+    }
+}
+
+
+// Slideshow Layout
+// ----------------
+
+// Slideshow Height
+.responsiveslideshow, .responsiveslideshow__figure {
+    position: relative;
+    min-height: 400px;
+}
+
+
+// Fixes jumping slides
+.responsiveslideshow .slide-item {
+    overflow: hidden;
+    height: 400px;
+}
+
+
+// Slideshow Images
+// ----------------
+
+// Use Background-image Method
+.responsiveslideshow__figure {
+    background-size: cover;
+    background-position: center;
+}
+// Hide Img Element
+.responsiveslideshow__image {
+    display: none;
+}
+
+
+// Slideshow Image Captions
+// ------------------------
+
+.responsiveslideshow .caption {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 0;
+    background-color: @color__slideshow-caption--background;
+
+    @media @bp-mobile {
+        padding: 0 20px;
+    }
+}
+
+
+.responsiveslideshow__image-title,
+.responsiveslideshow__image-description {
+    width: 100%;
+    margin-bottom: 0;
+    color: @bg-color;
+}
+
+.responsiveslideshow__image-title {
+    padding: 10px 10px 0px 10px;
+}
+
+.responsiveslideshow__image-description {
+    padding: 0px 10px 10px 10px;
+}
+
+
+// Slideshow Controls
+// ------------------
+
+// Navigation Buttons
+.slide-navigation {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+
+      -webkit-box-direction: normal;
+         -moz-box-direction: normal;
+         -webkit-box-orient: horizontal;
+            -moz-box-orient: horizontal;
+     -webkit-flex-direction: row;
+         -ms-flex-direction: row;
+             flex-direction: row;
+          -webkit-flex-wrap: nowrap;
+              -ms-flex-wrap: nowrap;
+                  flex-wrap: nowrap;
+           -webkit-box-pack: justify;
+              -moz-box-pack: justify;
+    -webkit-justify-content: space-between;
+              -ms-flex-pack: justify;
+            justify-content: space-between;
+      -webkit-align-content: center;
+         -ms-flex-line-pack: center;
+              align-content: center;
+          -webkit-box-align: center;
+             -moz-box-align: center;
+        -webkit-align-items: center;
+             -ms-flex-align: center;
+                align-items: center;
+}
+
+
+// Prev, Next, Pause Buttons
+button.responsiveslideshow__previous-button,
+button.responsiveslideshow__next-button,
+button.pause-toggle {
+    width: 50px;
+    height: 50px;
+    padding: 0;
+    color: @contrast-color;
+    background-color: transparent;
+    font-size: 15px;
+    background-image: none;
+    &:hover {
+        background-color: transparent;
+        color: @contrast-color;
+        padding: 0;
+    }
+    // Removes margin-right for icons
+    &:before {
+        margin-right: 0;
+    }
+}
+
+
+// Ensures pause button is aligned centrally if next and prev buttons are hidden
+button.pause-toggle {
+    margin: 0 auto;
+}
+
+
+// Removes button text
+.responsiveslideshow__control-text {
+    display: none;
+}
+
+
+// Pagination
+// ----------
+
+.responsiveslideshow__pagination-list {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-direction: normal;
+    -moz-box-direction: normal;
+    -webkit-box-orient: horizontal;
+    -moz-box-orient: horizontal;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-pack: justify;
+    -moz-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-align-content: flex-start;
+    -ms-flex-line-pack: start;
+    align-content: flex-start;
+    -webkit-box-align: start;
+    -moz-box-align: start;
+    -webkit-align-items: flex-start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+}
+
+
+.responsiveslideshow__pagination-item {
+    -webkit-box-flex: 1;
+    -moz-box-flex: 1;
+    -webkit-flex: 1 1 auto;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+}
+
+
+// Pagination Item
+.responsiveslideshow__pagination-item {
+    margin: 1px 0;
+}
+
+
+// Pagination Button
+.responsiveslideshow .button--pagination {
+    width: 100%;
+    height: 3px;
+    text-align: left;
+    padding: 0!important;
+    overflow: hidden;
+    border-radius: 0;
+    background-color: @bg-color;
+    border-top: 1px solid @bg-color;
+    .transition(@duration:0.6s, @ease:ease-in-out); // Mixin > Other Mixins: Transitions
+}
+
+
+.responsiveslideshow .pagination-item.selected > .button--pagination {
+    border-top: 1px solid @color__slideshow-caption--background;
+}
+
+
+
+
+// -----------------------------
+// 7.  #Buttons
+// -----------------------------
+
+// Formatting all inputs and buttons so they match in size
+input, textarea, button, .button {
+    padding: 6px 12px;
+}
+
+
+
+//  #STANDARD
+//  --------------
+
+button,
+.button,
+.blogpostlist__read-more {
+    position: relative;
+    .transition(@duration:0.2s, @ease:ease-in-out); // Mixin
+    line-height: @font__button--line-height;
+    padding: 2px 45px 2px 0;
+
+    &:after {
+        content: "";
+        position: absolute;
+        right: 0;
+        width: 40px;
+        height: 40px;
+        top: -3px;
+        background-image: image('/images/button-arrow.png');
+        background-image: image('/images/button-arrow.svg');
+        background-position: right center;
+        background-repeat: no-repeat;
+    }
+
+    &:hover {
+        padding: 2px 55px 2px 0;
+        text-decoration: none;
+    }
+
+    &:focus {
+        outline: 0;
+    }
+}
+
+.blogpostlist__button,
+.blogpost__button,
+.previous-button,
+.next-button,
+.pause-toggle,
+.button--pagination,
+.quantity-minus,
+.quantity-plus,
+.navigation-toggle  {
+    &:after {
+        background-image: none;
+    }
+}
+
+.icon--next {
+    &:after {
+        margin-left: 15px;
+        content: "\f105";
+        position: relative;
+        top: 0;
+    }
+}
+
+// button,
+// .button,
+// .blogpostlist__read-more {
+//     .transition(@duration:0.2s, @ease:ease-in-out); // Mixin
+//     line-height: @font__button--line-height;
+//     padding: 0;
+//     background-image: image('/images/button-arrow.png');
+//     background-image: image('/images/button-arrow.svg');
+//     background-repeat: no-repeat;
+//     padding: 2px 45px 2px 0;
+//     background-position: right;
+
+//     &:hover {
+//         padding: 2px 55px 2px 0;
+//         text-decoration: none;
+//     }
+
+//     &:focus {
+//         outline: 0;
+//     }
+// }
+
+
+
+
+// -----------------------------
+// 8.  #Forms
+// -----------------------------
+
+// Form 
+.form {
+    background-color: @color__form--background;
+    padding: 40px;
+    @media @mobile {
+        padding: 20px;
+    }
+}
+
+// Form Body
+.form-body {
+    margin: 0;
+}
+
+
+// Form Group
+.form-group {
+    margin-bottom: 20px;
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+
+input[type="search"],
+input[type="email"],
+input[type="password"],
+textarea, .input--single-line {
+    padding: 12px 10px;
+}
+
+
+// Legend
+// ----------
+
+legend {
+    width: 100%;
+    font-size: @font__h2--font-size;
+    font-family: @font__h2--font-family;
+    color: @color__form-legend--text;
+    letter-spacing: @font__h2--letter-spacing;
+    font-weight: @font__h2--font-weight;
+    margin-bottom: 20px;
+    @media @mobile {
+        font-size: bkscale(@font__h2--font-size,0.8);
+    }
+}
+
+
+// Label
+// ----------
+
+label {
+    font-family: @font__p--font-family;
+    font-size: @font__p--font-size;
+    color: @color__p--text;
+    @media @mobile {
+        font-size: bkscale(@font__p--font-size,0.6);
+    }
+}
+
+.dropbox__label {
+    font-size: @font__button--font-size;
+}
+
+.ecomproductslist .label {
+    font-size: 14px;
+}
+
+.contactform__label {
+    display: none;
+}
+
+.signupform__label {
+    display: none;
+}
+
+
+// Placeholder
+.blogsearch__form,
+.signupform__form,
+.ecomproductslist__form-group,
+.advancedcontactform__form-group {
+    ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+      color: transparent;
+    }
+    ::-moz-placeholder { /* Firefox 19+ */
+      color: transparent;
+    }
+    :-ms-input-placeholder { /* IE 10+ */
+      color: transparent;
+    }
+    :-moz-placeholder { /* Firefox 18- */
+      color: transparent;
+    }
+}
+
+
+// Select
+// ----------
+
+
+// Select Wrap
+.select-wrap {
+    position: relative;
+
+    // Dropdown Arrow
+    &:after {
+        content: '\f107';
+        font-family: 'FontAwesome', sans-serif;
+        display: inline-block;
+        height: 1em;
+        line-height: 1em;
+        text-align: center;
+        font-size: 20px;
+        color: @font-swatch5-color;
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        margin-top: -0.5em;
+    }
+}
+
+// Select   
+// ------------------------------
+
+.select {
+    border: none;
+    color: @color__p--text;
+    font-size: 16px;
+    border-radius: 0;
+    background-color: transparent;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    padding: 0 1.5em 0 0;
+    display: block;
+    width: 100%;
+    position: relative;
+    z-index: 1000;
+    border-bottom: 1px solid #ddd;
+
+    &:hover, &:focus {
+        background-color: transparent;
+    }
+
+}
+
+.select::-ms-expand {
+    display: none;
+}
+
+
+
+// Inputs: Text
+// ------------
+
+input[type="search"],
+input[type="email"],
+input[type="password"],
+textarea,
+.input--single-line {
+    // Padding is set in stylesheet.less
+    border: 0;
+    border-bottom: 1px solid @color-swatch2;
+    resize: none;
+    -webkit-appearance: none;
+    -webkit-border-radius: 0;
+    &:focus {
+        border-color: @color-swatch4;
+        box-shadow: none;
+        .transition(@duration:0.2s, @ease:ease-in-out); // Mixin
+    }
+}
+
+.ecomproductslist__input {
+    &:focus {
+        border-color: @color-swatch4!important;
+        border-bottom: 1px solid @color-swatch4!important;
+    }
+}
+
+input[type="search"]:focus {
+    border-color: @color-swatch4!important;
+    border-bottom: 1px solid @color-swatch4!important;
+}
+
+
+
+
+// -----------------------------
+// 9.  #Social Icons
+// -----------------------------
+
+
+// Template Social Icons
+// -----------------------------
+
+// Item Link
+.social-link {
+    color: @color__socialicons--text;
+    .transition(@duration:0.2s, @ease:ease-in-out); // Mixin
+    font-size: 30px;
+    box-shadow: 0 4px 2px -4px transparent;
+    padding-bottom: 10px;
+    &:hover {
+        color: darken(@color__socialicons--text, 10%);
+        text-decoration: none;
+        box-shadow: 0 4px 2px -4px #7B7B7B;
+    }
+    @media @mobile {
+        font-size: 20px;
+    }
+}
+
+// Icons
+.socialicons {
+    .icon:before {
+        display: none;
+    }
+}
+
+// Social Item
+.social-item {
+    margin-right: 30px;
+    margin-bottom: 10px;
+    @media @mobile {
+        width: 50%;
+        margin-right: 0;
+        margin-bottom: 0;
+    }
+}
+
+
+
+
+// -----------------------------
+// 10.  #Twitter Feed
+// -----------------------------
+
+
+.twitter {
+
+    // Tweet Item
+    // ----------
+    .tweet-list {
+        .flex(@display: flex);
+        .flex-wrap(@wrap: wrap);
+        margin-bottom: 20px;
+    }
+
+    .account-link {
+        letter-spacing: 0px;
+    }
+
+    .tweet-wrap {
+        padding: 0px 20px;
+        text-align: left;
+        @media @tablet {
+            padding: 10px 0px 0;
+        }
+    }
+
+    .account-link {
+        width: 100%;
+        text-decoration: none;
+    }
+
+    .tweet-meta {
+        width: 100%;
+    }
+
+    .avatar-link {
+        width: 50px;
+        height: 50px;
+    }
+
+    // Tweet Item
+    // ----------
+
+    .tweet-item {
+        text-align: center;
+        display: inline-block;
+        background-color: transparent;
+        margin-bottom: 30px;
+        width: 50%;
+        padding: 40px;
+
+        .flex(@display: flex);
+        .align-items(@align: center);
+        .justify-content(@justify: center);
+
+        @media @bp-global-small {
+            width: 100%;
+            padding: 20px;
+            margin-bottom: 0;
+        }
+
+        @media @tablet {
+            width: 100%;
+            display: block;
+        }
+
+        &:hover {
+            background-color: @color__twitter-item--background;
+            .transition;
+        }
+
+        .account-name {
+            font-family: @font__p--font-family;
+            color: @color__twitter-account-name--text;
+            font-size: @font__p--font-size;
+            font-weight: @font__p--font-weight;
+            line-height: @font__p--line-height;
+        }
+        .tweet-content,
+        .tweet-metadata .timestamp,
+        .tweet-metadata .via {
+            color: @color__twitter-tweet--text;
+        }
+
+        .tweet-wrap p {
+            padding-bottom: 0;
+            color: @color__twitter-tweet--text;
+            font-style: italic;
+            font-size: 20px;
+        }
+
+        .tweet-content a,
+        .tweet-metadata a {
+            text-decoration: underline;
+            color: @color__twitter-tweet--text;
+        }
+
+        .account-name {
+            font-size: bkscale(@font__h3--font-size,0.7);
+        }
+
+        .tweet-metadata {
+            font-size: 14px;
+        }
+
+        .account-name:before {
+            display: none;
+        }
+    }
+
+
+
+    // Avatar
+    // ----------
+
+    .avatar {
+        padding: 0;
+    }
+
+
+
+    // Smaller screens
+    // ---------------
+
+    @media @bp-tablet {
+
+        // Tweet List
+        // ----------
+        .tweet-list {
+            display: block;
+        }
+    }
+
+}
+
+
+
+
+// -----------------------------
+// 11.  #Divider (Keyline)
+// -----------------------------
+
+hr,
+hr.rule {
+    background-color: @color-swatch5;
+    height: 1px;
+}
+
+
+
+
+// -----------------------------
+// 12. #Yelp
+// -----------------------------
+
+.review-list {
+    list-style: none;
+    margin-left: 0;
+}
+
+
+
+
+// -----------------------------
+// 13. #Messages
+// -----------------------------
+
+.message {
+    margin: 20px 0;
+    padding: 10px 40px;
+    display: block;
+
+    @media @bp-mobile {
+        margin: 30px 0;
+    }
+}
+
+.message:before {
+    left: 10px;
+    top: 8px;
+}
+
+
+
+
+// -----------------------------
+// 14. #Pagination
+// -----------------------------
+
+.pagination-item.current {
+    .button--pagination {
+        background-color: transparent;
+        background-image: none;
+        box-shadow: 0 4px 2px -4px #7B7B7B;
+    }
+}
+
+.ecomproductslist__pagination-item .button {
+    background-image: none;
+    margin: 0px;
+    padding: 10px;
+    box-shadow: 0 4px 2px -4px transparent; 
+    &:hover {
+        box-shadow: 0 4px 2px -4px #7B7B7B;
+        .transition(@duration:0.2s, @ease:ease-in-out); // Mixin
+    }
+}
+
+
+
+
+// -----------------------------
+// 15. #Click to Call
+// -----------------------------
+
+.widget__clicktocall a {
+    text-decoration: none;
+    color: @color__button--text;
+    font-size: @font__button--font-size;
+}
+
+.clicktocall__phone-number-link {
+    @media @mobile {
+        background-image: none;
+        padding: 0!important;
+        &:after {
+            display: none!important;
+        }
+    }
+}
+
+
+// ---------------------------------
+// #Columns Variations
+// ---------------------------------
+
+
+
+
+// All Columns
+// ------------------------------
+
+
+@media @bp-global-columns {
+    .responsivecolumns {
+
+        .form {
+            margin-bottom: 20px;
+        }
+
+        // All Columns
+        .column .twitter .tweet-item {
+            flex: 1 1 100%;
+        }
+
+        .twitter .tweet-item {
+            width: 100%;
+        }
+
+        // 3/4 columns
+        .columns-four-first,
+        .columns-four-second,
+        .columns-four-third,
+        .columns-four-fourth,
+        .columns-three-left,
+        .columns-three-right,
+        .columns-three-middle {
+
+            .blogpostlist .post-content {
+                padding: 0px 30px 30px;
+            }
+
+            .twitter .tweet-item {
+                display: block;
+                padding: 20px;
+            }
+
+            .twitter .tweet-wrap {
+                padding: 0;
+            }
+
+            .twitter .tweet-item .tweet-content a {
+                font-size: 12px;
+            }
+
+        }
+
+
+        // 4 columns
+        // ------------------------------
+
+
+        .columns-four-first,
+        .columns-four-second,
+        .columns-four-third,
+        .columns-four-fourth {
+
+            .ecomproduct .select {
+                min-width: 195px;
+            }
+
+            .ecomproduct .form-group {
+                margin-right: 0;
+            }
+
+        }
+    }
+}
