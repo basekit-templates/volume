@@ -1,7 +1,7 @@
 {
-    "name": "Vivid",
-    "thumbnail": "thumbnail.png",
-    "screenshot": "vivid-screenshot.jpg",
+    "name": "Volume",
+    "thumbnail": "volume.png",
+    "screenshot": "volume-screenshot.jpg",
     "widgetVersion":2,
     "pageTypes": ["home"],
     "templateType":"standard",
