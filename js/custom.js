@@ -73,13 +73,13 @@ $(document).ready(function() {
 
 
 // Toggles class open to display/hide the whole navigation
-$( ".navigation-toggle" ).click(function() {
-    $( ".bk-extendednavigation" ).toggleClass( "open" );
-    $( "body, html" ).toggleClass( "noscroll" );
+$(document).on("click", ".navigation-toggle", function() {
+    $( ".navigation-list, .bk-extendednavigation" ).toggleClass( "open" );
+    $( "body" ).toggleClass( "noscroll" );
 });
 
-// Toggles class open to display/hide folders
 
+// Toggles class open to display/hide folders
 $( ".navigation-item.folder .item-name--parent" ).each(function() {
     $( this ).click(function() {
             $( this ).parent( ".navigation-item.folder" ).toggleClass( "open-folder" );
