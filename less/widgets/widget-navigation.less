@@ -274,6 +274,25 @@
     }
 }
 
+
+.noscroll {
+
+    .header-extendednavigation {
+        z-index: 10002;
+    }
+
+    .widget-overlay {
+        display: block;
+        z-index: 10003;
+    }
+}
+
+
+[data-widget-type="extendednavigation"] .widget-overlay {
+    display: none;
+}
+
+
 // Editor Navigation Overlay Settings
 [data-widget-type="extendednavigation"] .widget-overlay .widget__list {
    @media @mobile {
@@ -300,6 +319,7 @@
     overflow: hidden;
     float: right;
     background-image: none;
+    z-index: 10003;
 
     .transition(@duration:0.2s, @ease:ease-in-out);
 
