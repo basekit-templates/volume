@@ -142,13 +142,9 @@
     max-width: 100%;
 
     @media @tablet {
-        padding: 10px 0px;
         display: inline-block;
         vertical-align: middle;
         margin-bottom: 20px;
-    }
-
-    @media @mobile {
         width: 100%;
         text-align: center;
         padding: 10px 0px 0;
@@ -210,9 +206,6 @@
 
     @media @tablet {
         display: inline-block;
-    }
-
-    @media @mobile {
         text-align: center;
     }
 }
@@ -520,13 +513,13 @@
             display: none;
         }
     }
-    
+
     .image-title {
         .flex-order(@order: 0);
         .flex(@display: 0 0 auto);
         .align-self(@align: flex-start);
     }
-    
+
     .image-description {
         .flex-order(@order: 1);
         .flex(@display: 0 0 auto);
@@ -587,7 +580,7 @@
             height: 300px!important;
         }
     }
-    .icon--play:before, 
+    .icon--play:before,
     .icon--pause.pause:before {
         font-size: 30px;
     }
@@ -916,7 +909,7 @@ button,
 // 8.  #Forms
 // -----------------------------
 
-// Form 
+// Form
 .form {
     background-color: @color__form--background;
     padding: 40px;
@@ -1039,7 +1032,7 @@ label {
     }
 }
 
-// Select   
+// Select
 // ------------------------------
 
 .select {
@@ -1353,7 +1346,7 @@ hr.rule {
     background-image: none;
     margin: 0px;
     padding: 10px;
-    box-shadow: 0 4px 2px -4px transparent; 
+    box-shadow: 0 4px 2px -4px transparent;
     &:hover {
         box-shadow: 0 4px 2px -4px #7B7B7B;
         .transition(@duration:0.2s, @ease:ease-in-out); // Mixin
