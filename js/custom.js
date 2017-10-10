@@ -74,10 +74,10 @@ $(document).ready(function() {
 
 // Toggles class open to display/hide the whole navigation
 $(document).on("click", ".navigation-toggle", function() {
-    $( ".navigation-list" ).toggleClass( "open" );
-    $( ".bk-extendednavigation" ).toggleClass( "open" );
-    $( "body" ).toggleClass( "noscroll" );
+    $( "body" ).toggleClass( "open" );
 });
+
+
 
 
 // Toggles class open to display/hide folders

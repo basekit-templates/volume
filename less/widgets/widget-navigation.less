@@ -147,7 +147,7 @@
 .navigation-list {
     margin: 0;
     visibility: hidden;
-    &.open {
+    .open & {
         visibility: visible;
     }
 }
@@ -179,7 +179,7 @@
     padding: 150px 15%;
     background-color: @color__body--background;
     // Allows scrolling on mobile
-    &.open {
+    .open & {
         overflow: auto;
     }
     @media @mobile {
@@ -191,7 +191,7 @@
 .navigation-list {
     margin: 0;
 
-    &.open {
+    .open & {
         display: block;
     }
 }
@@ -211,7 +211,7 @@
 }
 
 // Navigation item when nav is open
-.navigation-list.open {
+.open .navigation-list {
   .transform(@x:0, @y:0);
   .navigation-item {
         .transform(@x:0, @y:0);
@@ -272,7 +272,7 @@
 }
 
 
-.noscroll {
+.open {
 
     .header-extendednavigation {
         z-index: 10002;
@@ -283,7 +283,7 @@
 [data-widget-type="extendednavigation"] .widget-overlay {
     display: none;
 
-    .noscroll & {
+    .open & {
         display: block;
         position: fixed!important;
         right: 12%;

@@ -116,9 +116,6 @@ button,
 // ---------------
 
 .extendednavigation {
-    .navigation-list.open {
-        background-color: @color__navigation--background;
-    }
 
     .extendednavigation__item-name {
         color: @color__navigation--text;
@@ -127,6 +124,11 @@ button,
     .item-name--parent:after {
         border-top-color: @color__navigation--text;
     }
+}
+
+
+.open .navigation-list {
+    background-color: @color__navigation--background;
 }
 
 
