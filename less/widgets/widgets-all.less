@@ -545,46 +545,6 @@
 // -----------------------------
 
 
-// Slideshow Mobile
-// ----------------
-
-.responsiveslideshow {
-    .icon--previous:before {
-        content: "\f104";
-        font-size: 40px;
-        color: black;
-        &:hover {
-            margin-right: 15px;
-        }
-    }
-    .icon--next:after {
-        content: "\f105";
-        font-size: 40px;
-        color: black;
-        &:hover {
-            margin-left: 15px;
-        }
-    }
-    @media @mobile {
-        height: 300px!important;
-        min-height: 300px!important;
-    }
-    .slides-list {
-        @media @mobile {
-            min-height: 300px!important;
-            height: 300px!important;
-        }
-    }
-    .slide-item {
-        @media @mobile {
-            height: 300px!important;
-        }
-    }
-    .icon--play:before,
-    .icon--pause.pause:before {
-        font-size: 30px;
-    }
-}
 
 
 // Slideshow items
@@ -810,6 +770,48 @@ button.pause-toggle {
 }
 
 
+// Slideshow Mobile
+// ----------------
+
+.responsiveslideshow {
+    .icon--previous:before {
+        content: "\f104";
+        font-size: 40px;
+        color: black;
+        &:hover {
+            margin-right: 15px;
+        }
+    }
+    .icon--next:after {
+        content: "\f105";
+        font-size: 40px;
+        color: black;
+        &:hover {
+            margin-left: 15px;
+        }
+    }
+    @media @mobile {
+        height: 300px;
+        min-height: 300px;
+    }
+    .slides-list {
+        @media @mobile {
+            min-height: 300px;
+            height: 300px;
+        }
+    }
+    .slide-item {
+        @media @mobile {
+            height: 300px;
+        }
+    }
+    .icon--play:before, 
+    .icon--pause.pause:before {
+        font-size: 30px;
+    }
+}
+
+
 
 
 // -----------------------------
@@ -1029,6 +1031,7 @@ label {
         right: 10px;
         top: 50%;
         margin-top: -0.5em;
+        z-index: 2;
     }
 }
 
