@@ -1,0 +1,110 @@
+
+// -----------------------------
+// Migration Styles
+// -----------------------------
+
+
+#migrated-site {
+
+
+    // Stylesheet overrides
+    // -----------------------------
+    
+    
+    .container:not(.footer-wrapper) {
+        width: 100%;
+    }
+    
+    
+    .template-content {
+        padding-top: 0;
+    }
+    
+    
+    [data-name="row"] .row__container {
+        
+        button:not(.previous-button):not(.next-button):not(.pause-toggle):not(.paypalbuynow__button), 
+        .button:not(.previous-button):not(.next-button):not(.pause-toggle):not(.paypalbuynow__button),
+        .blogpostlist__read-more,
+        button:not(.previous-button):not(.next-button):not(.pause-toggle):not(.paypalbuynow__button):hover, 
+        .button:not(.previous-button):not(.next-button):not(.pause-toggle):not(.paypalbuynow__button):hover, 
+        .blogpostlist__read-more:hover {
+            padding: 8px 45px 8px 18px;
+            
+            &:after {
+                top: 4px;
+            }
+        }
+        
+        
+        .paypalbuynow__button:after {
+            display: none;
+        }
+
+
+        .social-link {
+            padding: 8px;
+        }
+    }
+    
+    
+    [data-name="row"] .signupform__form-body {
+        .flex-display;
+        .align-items(center);
+        
+        @media @mobile {
+            display: block;
+        }
+        
+        
+        .form-group:first-child {
+            .flex-grow(1);
+        }
+    }
+    
+    
+    [data-name="row"] .blogpostlist__read-more:after {
+        top: 10px;
+    }
+    
+    
+    .template-footer {
+        margin-top: 0;
+    }
+
+
+
+    // Migration styles
+    // -----------------------------
+    
+    
+    // Applies spacing to widgets to mimic container width
+    .empty-zone,
+    #page-zones__main:empty,
+    #page-zones__main > .widget:not([data-name="row"]),
+    .row:not(.row--width-no-padding) .row__container {
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 100%;
+        width: 90%;
+    }
+    
+    
+    // Adds spacing to a section when a widget follows it
+    #page-zones__main > [data-name="row"] + .widget:not([data-name="row"]),
+    #page-zones__main > .widget:not([data-name="row"]) + [data-name="row"]:not(:last-child),
+    &.edit #page-zones__main-overlay + .widget:not([data-name="row"]),
+    #page-zones__main > .widget:not([data-name="row"]):first-child {
+        margin-top: 60px;
+
+        @media @mobile {
+            margin-top: 40px;
+        }
+    }
+
+    
+    // Move spacing to last widget in the main zone (not sections)
+    #page-zones__main > .widget:not([data-name="row"]):last-child {
+        margin-bottom: 20px;
+    }
+}

@@ -5,6 +5,7 @@
     "widgetVersion":2,
     "pageTypes": ["home"],
     "templateType":"standard",
+    "versionTenCompatible": 1,
     "images": [
         "images/image-1.jpg",
         "images/logo-default.png",
